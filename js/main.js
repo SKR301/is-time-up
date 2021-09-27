@@ -7,6 +7,6 @@ document.getElementById('game').style.visibility  = 'hidden';
 
 //close instruction
 function closeInstruction(){
-	document.getElementById('instruction').style.visibility  = 'hidden';
+	document.getElementById('instruction').remove();
 	document.getElementById('game').style.visibility  = 'visible';
 }

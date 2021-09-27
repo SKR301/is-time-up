@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/css.css">
 </head>
 <body class="">
 
@@ -16,35 +17,61 @@ is TIME UP?
   <li class="list-inline-item"><a class="text-dark" href="index.html"><u>Back</u></a></li>
 </ul>
 
-<div class="bg-warning w-50 p-4 m-5 mx-auto" id="instruction">
+<!-- introduction -->
+<div class="bg-dark w-50 p-4 m-5 mx-auto rounded" id="instruction">
 	<button class="float-end" onclick="closeInstruction()">X</button>
-	<div class="text-info">HOW TO</div>
+
+	<h1 class="text-primary">HOW TO</h1>
 	<div>
 		<ol>
-			<li class="text-info">Press Get TIME (X)</li>
-			<li class="text-info">Press Start</li>
-			<li class="text-info">Wait for X secs</li>
-			<li class="text-info">Press STOP when you think secs passed</li>
-			<li class="text-info">**Precision = Points**</li>
+			<li class="text-warning">Press Get TIME (X)</li>
+			<li class="text-warning">Press Start</li>
+			<li class="text-warning">Wait for X secs</li>
+			<li class="text-warning">Press STOP when you think secs passed</li>
+			<li class="text-warning">**Precision = Points**</li>
 		</ol>
 	</div>
-	<button class="float-end" onclick="closeInstruction()">OK</button>
+</div>
+
+<!-- add game logic here -->
+<div class="" id="game">
+	<center><button class="display-4 btn btn-primary rounded" onclick="genTime()" id="getTime">Get Time</button></center>
+	<p class="text-center display-1 font-weight-bold text-primary" id="time"></p>
+
+	<div class="text-center">
+		<button class="btn btn-success text-center mt-5 rounded-circle" onclick="startTime()" id="startTimer_btn">START</button>
+	</div>
+
+	<!-- scoring -->
+	<div class="text-center mt-5">
+		<p id="score">SCORE : 0</p>
+		<button class="btn btn-warning" onclick="saveScore()" id="save_btn">Save</button>
+	</div>
+</div>
+
+<!-- round result -->
+<div class="mt-4 mx-auto bg-secondary w-75 text-center" id="result">
+	<button class="float-end" onclick="closeResult()">X</button>
+
+	<div class="container">
+		<div class="row">
+			<div class="col w-50">
+				<p class="display-1 border rounded-circle" id="actualTime"></p>
+			</div>
+			<div class="col w-50">
+				<p class="display-1 border rounded-circle" id="yourTime"></p>
+			</div>
+		</div>
+	</div>
 </div>
 
 
-<!-- add game logic here -->
-<!-- 
-<div class="" id="game">
-	<p onclick="genTime()" id="time">Get Time</p>
-</div> -->
-
-
-
 <!-- footer -->
-<footer class="text-light fixed-bottom bg-dark p-3">
-	<p class="float-start">©SKRinternationals PVT. LTD. estd. 2021</p>
+<footer class="text-light fixed-bottom bg-dark p-3 text-center">
+	<p class="float-start">©SKRinternationals PVT. LTD. <br>estd. 2021</p>
 	<a class="text-info float-end" href="contact.html">Contact us</a>
 </footer>
 </body>
 <script src="js/main.js"></script>
+<script src="js/game.js"></script>
 </html>
