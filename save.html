@@ -16,6 +16,17 @@ is TIME UP?
   <li class="list-inline-item"><a class="text-dark" href="index.html"><u>Back</u></a></li>
 </ul>
 
+<div class="w-75 mx-auto">
+	<div class="input-group mb-3">
+	  <span class="input-group-text" id="username">@</span>
+	  <input type="text" class="form-control" placeholder="Username">
+	</div>
+	<div class="input-group mb-3">
+	  <span class="input-group-text" id="userage">#</span>
+	  <input type="number" class="form-control" placeholder="Age" min="1" max="">
+	</div>
+	<button type="submit" class="btn btn-success float-end" onclick="writeScore()">Submit</button>
+</div>
 
 <!-- footer -->
 <footer class="text-light fixed-bottom bg-dark p-3">
@@ -23,5 +34,5 @@ is TIME UP?
 	<a class="text-info float-end" href="contact.html">Contact us</a>
 </footer>
 </body>
-<script src="js/db.js"></script>
+<script type="text/javascript" src="js/db.js"></script>
 </html>

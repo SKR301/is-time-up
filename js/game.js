@@ -6,7 +6,9 @@ var totalScore = 0;
 
 document.getElementById("startTimer_btn").disabled  = true;
 document.getElementById("result").style.visibility  = 'hidden';
+document.getElementById('game').style.visibility  = 'hidden';
 
+//generate time
 function genTime(){
 	var time = document.getElementById("getTime");
 	time.classList.remove("btn");
@@ -21,6 +23,7 @@ function genTime(){
 	document.getElementById("startTimer_btn").disabled = false;
 }
 
+//start timer
 function startTime(){
 	timeBegin = new Date();
 
@@ -32,6 +35,7 @@ function startTime(){
 	btn.id = "stopTimer_btn";
 }
 
+//stop timer
 function stopTime(){
 	timeEnd = new Date();
 	yourTime = (timeEnd - timeBegin) / 1000;
@@ -48,6 +52,7 @@ function stopTime(){
 	calcScore();
 }
 
+//display result box
 function showResult(){
 	document.getElementById("result").style.visibility  = 'visible';
 
@@ -55,6 +60,7 @@ function showResult(){
 	document.getElementById("yourTime").innerHTML = yourTime;	
 }
 
+//close result box
 function closeResult(){
 	document.getElementById("result").style.visibility  = 'hidden';
 	document.getElementById("game").style.visibility  = 'visible';
@@ -68,13 +74,16 @@ function closeResult(){
 	time.innerHTML = "Get Time";
 }
 
-//Need to change the scoring pattern;
+//-----------------------------------------Need to change the scoring pattern;
+//calculate score
 function calcScore(){
 	score = 10 - Math.abs(actualTime - yourTime);
 	totalScore += score;
 	document.getElementById('score').innerHTML = "SCORE : " + totalScore;
 }
 
+//redirect to save.html
 function saveScore(){
-	window.location = "save.html";  
+  	sessionStorage.setItem("totalScore", totalScore);
+	window.location = "save.html";
 }
