@@ -18,10 +18,8 @@ is TIME UP?
 </ul>
 
 <!-- introduction -->
-<div class="bg-dark w-50 p-4 m-5 mx-auto rounded" id="instruction">
-	<button class="float-end" onclick="closeInstruction()">X</button>
-
-	<h1 class="text-primary">HOW TO</h1>
+<div class="bg-dark w-75 p-4 m-5 mx-auto rounded" id="instruction">
+	<h1 class="text-light font-weight-bold">INSTRUCTIONS:</h1>
 	<div>
 		<ol>
 			<li class="text-warning">Press Get TIME (X)</li>
@@ -31,12 +29,14 @@ is TIME UP?
 			<li class="text-warning">**Precision = Points**</li>
 		</ol>
 	</div>
+	<center><button class="btn btn-primary mt-3" onclick="closeInstruction()">PLAY</button></center>
 </div>
 
 <!-- add game logic here -->
 <div class="" id="game">
-	<center><button class="display-4 btn btn-primary rounded" onclick="genTime()" id="getTime">Get Time</button></center>
-	<p class="text-center display-1 font-weight-bold text-primary" id="time"></p>
+	<center>
+		<p class="display-4 btn btn-primary rounded font-weight-bold" onclick="genTime()" id="getTime">Get Time</p>
+	</center>
 
 	<div class="text-center">
 		<button class="btn btn-success text-center mt-5 rounded-circle" onclick="startTime()" id="startTimer_btn">START</button>
@@ -44,21 +44,21 @@ is TIME UP?
 
 	<!-- scoring -->
 	<div class="text-center mt-5">
-		<p id="score">SCORE : 0</p>
+		<p id="score" class="display-3">SCORE : 0</p>
 		<button class="btn btn-warning" onclick="saveScore()" id="save_btn">Save</button>
 	</div>
 </div>
 
 <!-- round result -->
-<div class="mt-4 mx-auto bg-secondary w-75 text-center" id="result">
+<div class="mt-4 mx-auto bg-secondary w-75 text-center rounded" id="result">
 	<button class="float-end" onclick="closeResult()">X</button>
 
 	<div class="container">
-		<div class="row">
-			<div class="col w-50">
+		<div class="row p-2">
+			<div class="col">
 				<p class="display-1 border rounded-circle" id="actualTime"></p>
 			</div>
-			<div class="col w-50">
+			<div class="col">
 				<p class="display-1 border rounded-circle" id="yourTime"></p>
 			</div>
 		</div>
