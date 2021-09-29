@@ -26,8 +26,12 @@ is TIME UP?
 
 
 <!-- highscore -->
-<div class="container text-center w-50 mt-3">
-	<h1>SCORECARD</h1>
+<div class="container text-center w-75 mt-3">
+	<h1>High Scores</h1>
+	<div class="row text-dark font-15">
+		<div class="col">Name</div>
+		<div class="col">Score</div>
+	</div>
 	<div class="row border border-secondary text-secondary rounded font-15 mt-2" onmouseover="hoverOnFill(this)" onmouseout="hoverOffFill(this)">
 		<div class="col" id="highScore3User"></div>
 		<div class="col" id="highScore3Score"></div>
@@ -43,17 +47,17 @@ is TIME UP?
 </div>
 
 <!-- footer -->
-<footer class="text-light fixed-bottom bg-dark p-3">
+<footer class="text-light fixed-bottom bg-dark p-2">
 	<p class="float-start">©SKRinternationals PVT. LTD.<br> estd. 2021</p>
 	<a class="text-info float-end" href="contact.html">Contact us</a>
 </footer>
 </body>
 <script src="js/main.js"></script>
 <script src="js/startgame_btn.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
 <script src="js/db.js"></script>
+<script src="js/score.js"></script>
 
 </script>
 </html>

@@ -10,37 +10,4 @@ const config = {
 };
 
 firebase.initializeApp(config);
-var ref = firebase.database().ref("isTimeUp");
-
-window.onload = function(){
-	displayHighScore();
-}
-
-function writeScore(){
-	// alert("asd");
-}
-
-function readTop3Score(){
-
-}
-
-function readAllScore(){
-	
-}
-
-function displayHighScore(){
-	var row = 3;
-	ref.orderByChild('score').limitToLast(3).once('value', (snapshot) => {
-		snapshot.forEach(function (childSnapshot) {
-            var userName = childSnapshot.key;
-            var userScore = childSnapshot.val().score;
-
-            var colUser = document.getElementById("highScore"+row+"User");
-            var colScore = document.getElementById("highScore"+row+"Score");
-
-            colUser.innerHTML = userName;
-            colScore.innerHTML = userScore + "pts.";
-            row--;
-        });
-	});
-}
+var ref = firebase.database().ref();

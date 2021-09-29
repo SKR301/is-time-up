@@ -83,7 +83,7 @@ function closeResult(){
 //-----------------------------------------Need to change the scoring pattern;
 //calculate score
 function calcScore(){
-	score = Math.round(10 - Math.abs(actualTime - yourTime)).toFixed(3);
+	score = Math.round(10 - Math.abs(actualTime - yourTime)).toFixed(2);
 	totalScore += score;
 	document.getElementById('score').innerHTML = "SCORE : " + totalScore;
 }

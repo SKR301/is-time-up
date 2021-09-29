@@ -18,14 +18,14 @@ is TIME UP?
 
 <div class="w-75 mx-auto">
 	<div class="input-group mb-3">
-	  <span class="input-group-text" id="username">@</span>
-	  <input type="text" class="form-control" placeholder="Username">
+	  <span class="input-group-text">@</span>
+	  <input type="text" class="form-control" placeholder="Username" id="username">
 	</div>
 	<div class="input-group mb-3">
-	  <span class="input-group-text" id="userage">#</span>
-	  <input type="number" class="form-control" placeholder="Age" min="1" max="">
+	  <span class="input-group-text">#</span>
+	  <input type="number" class="form-control" placeholder="Age" min="1" max="" id="userAge">
 	</div>
-	<button type="submit" class="btn btn-success float-end" onclick="writeScore()">Submit</button>
+	<button type="submit" class="btn btn-success float-end" onclick="saveScore()">Submit</button>
 </div>
 
 <!-- footer -->
@@ -34,5 +34,8 @@ is TIME UP?
 	<a class="text-info float-end" href="contact.html">Contact us</a>
 </footer>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
 <script type="text/javascript" src="js/db.js"></script>
+<script type="text/javascript" src="js/score.js"></script>
 </html>
