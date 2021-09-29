@@ -8,6 +8,12 @@ document.getElementById("startTimer_btn").disabled  = true;
 document.getElementById("result").style.visibility  = 'hidden';
 document.getElementById('game').style.visibility  = 'hidden';
 
+//close instruction
+function closeInstruction(){
+	document.getElementById('instruction').remove();
+	document.getElementById('game').style.visibility  = 'visible';
+}
+
 //generate time
 function genTime(){
 	var time = document.getElementById("getTime");
@@ -16,10 +22,10 @@ function genTime(){
 	time.classList.remove("rounded");
 	time.setAttribute('onclick','');
 	time.classList.add("text-primary");
-
+	time.classList.add("font-50");
 
 	actualTime = Math.floor(Math.random() * 9 + 1);
-	time.innerHTML = actualTime;
+	time.innerHTML = actualTime + " secs";
 	document.getElementById("startTimer_btn").disabled = false;
 }
 
@@ -77,7 +83,7 @@ function closeResult(){
 //-----------------------------------------Need to change the scoring pattern;
 //calculate score
 function calcScore(){
-	score = 10 - Math.abs(actualTime - yourTime);
+	score = Math.round(10 - Math.abs(actualTime - yourTime)).toFixed(3);
 	totalScore += score;
 	document.getElementById('score').innerHTML = "SCORE : " + totalScore;
 }

@@ -8,44 +8,46 @@
 <body class="">
 
 <!-- header -->
-<header class="display-1 text-info m-5 text-center ">
+<header class="display-1 text-info text-center bg-dark p-3">
 is TIME UP?
 </header>
 
 <!-- nav bar -->
-<ul class="list-inline text-light p-2">
+<ul class="list-inline text-light p-3">
   <li class="list-inline-item"><a class="text-dark" href="index.html"><u>Back</u></a></li>
 </ul>
 
 <!-- introduction -->
-<div class="bg-dark w-75 p-4 m-5 mx-auto rounded" id="instruction">
-	<h1 class="text-light font-weight-bold">INSTRUCTIONS:</h1>
+<div class="w-75 m-5 mx-auto" id="instruction">
+	<div class="p-4 rounded border border-secondary">
+	<h1 class="text-dark font-weight-bold">INSTRUCTIONS:</h1>
 	<div>
 		<ol>
-			<li class="text-warning">Press Get TIME (X)</li>
-			<li class="text-warning">Press Start</li>
-			<li class="text-warning">Wait for X secs</li>
-			<li class="text-warning">Press STOP when you think secs passed</li>
-			<li class="text-warning">**Precision = Points**</li>
+			<li class="text-secondary"><h4>Press Get TIME (X)</h4></li>
+			<li class="text-secondary"><h4>Press Start</h4></li>
+			<li class="text-secondary"><h4>Wait for X secs</h4></li>
+			<li class="text-secondary"><h4>Press STOP when you think secs passed</h4></li>
+			<li class="text-secondary"><h4>**Precision = Points**</h4></li>
 		</ol>
 	</div>
-	<center><button class="btn btn-primary mt-3" onclick="closeInstruction()">PLAY</button></center>
+</div>
+	<center><button class="btn btn-success mt-3 font-30" onclick="closeInstruction()">PLAY</button></center>
 </div>
 
 <!-- add game logic here -->
-<div class="" id="game">
+<div class="m-5" id="game">
 	<center>
-		<p class="display-4 btn btn-primary rounded font-weight-bold" onclick="genTime()" id="getTime">Get Time</p>
+		<p class="display-4 btn btn-primary rounded font-weight-bold font-30" onclick="genTime()" id="getTime">Get Time</p>
 	</center>
 
 	<div class="text-center">
-		<button class="btn btn-success text-center mt-5 rounded-circle" onclick="startTime()" id="startTimer_btn">START</button>
+		<button class="btn btn-success text-center mt-3 font-50 circle-md" onclick="startTime()" id="startTimer_btn">START</button>
 	</div>
 
 	<!-- scoring -->
 	<div class="text-center mt-5">
-		<p id="score" class="display-3">SCORE : 0</p>
-		<button class="btn btn-warning" onclick="saveScore()" id="save_btn">Save</button>
+		<p id="score" class="display-4">SCORE : 0</p>
+		<button class="btn btn-warning font-25" onclick="saveScore()" id="save_btn">Save</button>
 	</div>
 </div>
 

@@ -3,16 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/css.css">
 </head>
 <body class="">
 
 <!-- header -->
-<header class="display-1 text-info m-5 text-center ">
+<header class="display-1 text-info text-center bg-dark p-3">
 is TIME UP?
 </header>
 
 <!-- nav bar -->
-<ul class="list-inline text-light p-2">
+<ul class="list-inline text-light p-3">
   <li class="list-inline-item"><a class="text-dark" href="#"><u>Home</u></a></li>
   <li class="list-inline-item"><a class="text-secondary" href="play.html"><u>Play</u></a></li>
   <li class="list-inline-item"><a class="text-secondary" href="analytics.html"><u>Analitics</u></a></li>
@@ -20,20 +21,39 @@ is TIME UP?
 
 <!-- start button -->
 <div class="text-center mt-5">
-	<img class="border rounded-circle" src="img/start_btn.jpg" onclick="startGame()" />
+	<img class="border rounded-circle pointer-cursor" id="startGame_btn" src="img/start_btn.jpg" onclick="startGame()" onmousedown="delargeStartButtonImg()" onmouseup="enlargeStartButtonImg()" onmouseover="enlargeStartButtonImg()" onmouseout="delargeStartButtonImg()" />
 </div>
 
 
 <!-- highscore -->
-<div>
-	
+<div class="container text-center w-50 mt-3">
+	<h1>SCORECARD</h1>
+	<div class="row border border-secondary text-secondary rounded font-15 mt-2" onmouseover="hoverOnFill(this)" onmouseout="hoverOffFill(this)">
+		<div class="col" id="highScore3User"></div>
+		<div class="col" id="highScore3Score"></div>
+	</div>
+	<div class="row border border-primary text-primary rounded font-20 mt-2" onmouseover="hoverOnFill(this)" onmouseout="hoverOffFill(this)">
+		<div class="col" id="highScore2User"></div>
+		<div class="col" id="highScore2Score"></div>
+	</div>
+	<div class="row border border-success text-success rounded font-25 mt-2" onmouseover="hoverOnFill(this)" onmouseout="hoverOffFill(this)">
+		<div class="col" id="highScore1User"></div>
+		<div class="col" id="highScore1Score"></div>
+	</div>
 </div>
 
 <!-- footer -->
 <footer class="text-light fixed-bottom bg-dark p-3">
-	<p class="float-start">©SKRinternationals PVT. LTD. estd. 2021</p>
+	<p class="float-start">©SKRinternationals PVT. LTD.<br> estd. 2021</p>
 	<a class="text-info float-end" href="contact.html">Contact us</a>
 </footer>
 </body>
 <script src="js/main.js"></script>
+<script src="js/startgame_btn.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+<script src="js/db.js"></script>
+
+</script>
 </html>
