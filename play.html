@@ -18,20 +18,21 @@ is TIME UP?
 </ul>
 
 <!-- introduction -->
-<div class="w-75 m-5 mx-auto" id="instruction">
-	<div class="p-4 rounded border border-secondary">
-	<h1 class="text-dark font-weight-bold">INSTRUCTIONS:</h1>
-	<div>
+<div class="w-75 m-5 mx-auto card" id="instruction">
+	<div class="p-4 rounded">
+	<h1 class="card-title">INSTRUCTIONS:</h1>
+	<h6 class="card-subtitle text-muted">This is a game to test your time perception skills.</h6>
+	<p class="card-text">
 		<ol>
-			<li class="text-secondary"><h4>Press Get TIME (X)</h4></li>
-			<li class="text-secondary"><h4>Press Start</h4></li>
-			<li class="text-secondary"><h4>Wait for X secs</h4></li>
-			<li class="text-secondary"><h4>Press STOP when you think secs passed</h4></li>
-			<li class="text-secondary"><h4>**Precision = Points**</h4></li>
+		<li>Start by pressing "Get Time"</li>
+		<li>Click the START to start timer</li>
+		<li>Wait for the time given</li>
+		<li>Click on STOP to stop timer</li>
+		<li>GOAL: To match your click period equal to given time</li>		
 		</ol>
+	</p>
 	</div>
-</div>
-	<center><button class="btn btn-success mt-3 font-30" onclick="closeInstruction()">PLAY</button></center>
+	<center><a class="card-link btn btn-primary font-20 w-100" onclick="closeInstruction()">PLAY</a></center>
 </div>
 
 <!-- add game logic here -->
