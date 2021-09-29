@@ -5,7 +5,7 @@ var yourTime = 0;
 var totalScore = 0;
 
 document.getElementById("startTimer_btn").disabled  = true;
-document.getElementById("result").style.visibility  = 'hidden';
+// document.getElementById("result").style.visibility  = 'hidden';
 document.getElementById('game').style.visibility  = 'hidden';
 
 //close instruction
@@ -60,7 +60,94 @@ function stopTime(){
 
 //display result box
 function showResult(){
-	document.getElementById("result").style.visibility  = 'visible';
+	document.getElementById("game").style.visibility  = 'hidden';
+
+	actualTime_p = document.createElement("P");
+	actualTime_p.classList.add("display-4");
+	actualTime_p.classList.add("p-2");
+	actualTime_p.classList.add("mt-2");
+	actualTime_p.classList.add("border");
+	actualTime_p.classList.add("bg-light");
+	actualTime_p.classList.add("rounded-circle");
+	actualTime_p.classList.add("circle-sm");
+	actualTime_p.id = "actualTime";
+
+	yourTime_p = document.createElement("P");
+	yourTime_p.classList.add("display-4");
+	yourTime_p.classList.add("p-2");
+	yourTime_p.classList.add("mt-2");
+	yourTime_p.classList.add("border");
+	yourTime_p.classList.add("bg-light");
+	yourTime_p.classList.add("rounded-circle");
+	yourTime_p.classList.add("circle-sm");
+	yourTime_p.id = "yourTime";
+
+	col11_div = document.createElement("DIV");
+	col11_div.classList.add("col");
+
+	col12_div = document.createElement("DIV");
+	col12_div.classList.add("col");
+
+	row1_div = document.createElement("DIV");
+	row1_div.classList.add("row");
+	row1_div.classList.add("p-2");
+
+	actualTimeLabel_p = document.createElement("H2");
+	actualTimeLabel_p.classList.add("mt-2");
+	actualTimeLabel_p.innerHTML = "Actual Time";
+
+	yourTimeLabel_p = document.createElement("H2");
+	yourTimeLabel_p.classList.add("mt-2");
+	yourTimeLabel_p.innerHTML = "Actual Time";
+
+	col21_div = document.createElement("DIV");
+	col21_div.classList.add("col");
+
+	col22_div = document.createElement("DIV");
+	col22_div.classList.add("col");
+
+	row2_div = document.createElement("DIV");
+	row2_div.classList.add("row");
+	row2_div.classList.add("p-2");
+
+
+
+
+
+	container_div = document.createElement("DIV");
+	container_div.classList.add("container");
+
+	replay_btn = document.createElement("BUTTON");
+	replay_btn.innerHTML = "Next Round";
+	replay_btn.classList.add("btn");
+	replay_btn.classList.add("btn-primary");
+	replay_btn.classList.add("mt-3");
+	replay_btn.classList.add("p-2");
+	replay_btn.classList.add("mb-2");
+	replay_btn.setAttribute('onclick','closeResult()');
+
+	center_ele = document.createElement("CENTER");
+
+	result = document.getElementById('result');
+
+	col11_div.appendChild(actualTime_p);
+	col12_div.appendChild(yourTime_p);
+	row1_div.appendChild(col11_div);
+	row1_div.appendChild(col12_div);
+
+	col21_div.appendChild(actualTimeLabel_p);
+	col22_div.appendChild(yourTimeLabel_p);
+	row2_div.appendChild(col21_div);
+	row2_div.appendChild(col22_div);
+	container_div.appendChild(row1_div);
+
+	center_ele.appendChild(replay_btn);
+
+	result.appendChild(container_div);
+	result.appendChild(center_ele);
+	result.classList.add("border-secondary");
+	result.classList.add("border");
+	result.style.marginTop = "500px";
 
 	document.getElementById("actualTime").innerHTML = actualTime;
 	document.getElementById("yourTime").innerHTML = yourTime;	
@@ -68,7 +155,7 @@ function showResult(){
 
 //close result box
 function closeResult(){
-	document.getElementById("result").style.visibility  = 'hidden';
+	document.getElementById("result").remove();
 	document.getElementById("game").style.visibility  = 'visible';
 
 	var time = document.getElementById("getTime");
@@ -77,6 +164,7 @@ function closeResult(){
 	time.classList.add("rounded");
 	time.setAttribute('onclick','genTime()');
 	time.classList.remove("text-primary");
+	time.classList.remove("font-50");
 	time.innerHTML = "Get Time";
 }
 

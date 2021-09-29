@@ -34,15 +34,15 @@
 	font-size: 50px;
 }
 
-.circle-md{
-	height: 200px;
-	width: 200px;
-	border-radius: 50%;
-}
-
 .circle-sm{
 	height: 100px;
 	width: 100px;
+	border-radius: 50%;
+}
+
+.circle-md{
+	height: 200px;
+	width: 200px;
 	border-radius: 50%;
 }
 
