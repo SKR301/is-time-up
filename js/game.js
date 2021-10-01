@@ -3,9 +3,9 @@ var timeEnd = 0;
 var actualTime = 0;
 var yourTime = 0;
 var totalScore = 0;
+var playTime = 0;
 
 document.getElementById("startTimer_btn").disabled  = true;
-// document.getElementById("result").style.visibility  = 'hidden';
 document.getElementById('game').style.visibility  = 'hidden';
 
 //close instruction
@@ -58,64 +58,78 @@ function stopTime(){
 	calcScore();
 }
 
-//display result box
 function showResult(){
 	document.getElementById("game").style.visibility  = 'hidden';
+
+	title_h5 = document.createElement("H1");
+	title_h5.innerHTML = "Result";
 
 	actualTime_p = document.createElement("P");
 	actualTime_p.classList.add("display-4");
 	actualTime_p.classList.add("p-2");
-	actualTime_p.classList.add("mt-2");
 	actualTime_p.classList.add("border");
 	actualTime_p.classList.add("bg-light");
 	actualTime_p.classList.add("rounded-circle");
 	actualTime_p.classList.add("circle-sm");
-	actualTime_p.id = "actualTime";
+	actualTime_p.id = "Goal";
+	actualTime_p.innerHTML = actualTime;
+
+	colActualTime_div = document.createElement("DIV");
+	colActualTime_div.classList.add("col");
+	colActualTime_div.classList.add("d-flex");
+	colActualTime_div.classList.add("justify-content-center");
+	colActualTime_div.appendChild(actualTime_p);
 
 	yourTime_p = document.createElement("P");
 	yourTime_p.classList.add("display-4");
 	yourTime_p.classList.add("p-2");
-	yourTime_p.classList.add("mt-2");
 	yourTime_p.classList.add("border");
 	yourTime_p.classList.add("bg-light");
 	yourTime_p.classList.add("rounded-circle");
 	yourTime_p.classList.add("circle-sm");
-	yourTime_p.id = "yourTime";
+	yourTime_p.id = "Effort";
+	yourTime_p.innerHTML = yourTime;
 
-	col11_div = document.createElement("DIV");
-	col11_div.classList.add("col");
+	colYourTime_div = document.createElement("DIV");
+	colYourTime_div.classList.add("col");
+	colYourTime_div.classList.add("d-flex");
+	colYourTime_div.classList.add("justify-content-center");
+	colYourTime_div.appendChild(yourTime_p);
 
-	col12_div = document.createElement("DIV");
-	col12_div.classList.add("col");
+	rowValue_div = document.createElement("DIV");
+	rowValue_div.classList.add("row");
+	rowValue_div.classList.add("p-2");
+	rowValue_div.appendChild(colActualTime_div);
+	rowValue_div.appendChild(colYourTime_div);
 
-	row1_div = document.createElement("DIV");
-	row1_div.classList.add("row");
-	row1_div.classList.add("p-2");
+	actualTimeLabel_p = document.createElement("P");
+	actualTimeLabel_p.classList.add("p-2");
+	actualTimeLabel_p.id = "actualTimeLabel";
+	actualTimeLabel_p.innerHTML = "actualTime";
 
-	actualTimeLabel_p = document.createElement("H2");
-	actualTimeLabel_p.classList.add("mt-2");
-	actualTimeLabel_p.innerHTML = "Actual Time";
+	colActualTimeLabel_div = document.createElement("DIV");
+	colActualTimeLabel_div.classList.add("col");
+	colActualTimeLabel_div.appendChild(actualTimeLabel_p);
 
-	yourTimeLabel_p = document.createElement("H2");
-	yourTimeLabel_p.classList.add("mt-2");
-	yourTimeLabel_p.innerHTML = "Actual Time";
+	yourTimeLabel_p = document.createElement("P");
+	yourTimeLabel_p.classList.add("p-2");
+	yourTimeLabel_p.id = "yourTimeLabel";
+	yourTimeLabel_p.innerHTML = "yourTime";
 
-	col21_div = document.createElement("DIV");
-	col21_div.classList.add("col");
+	colYourTimeLabel_div = document.createElement("DIV");
+	colYourTimeLabel_div.classList.add("col");	
+	colYourTimeLabel_div.appendChild(yourTimeLabel_p);
 
-	col22_div = document.createElement("DIV");
-	col22_div.classList.add("col");
-
-	row2_div = document.createElement("DIV");
-	row2_div.classList.add("row");
-	row2_div.classList.add("p-2");
-
-
-
-
+	rowLabel_div = document.createElement("DIV");
+	rowLabel_div.classList.add("row");
+	rowLabel_div.classList.add("p-2");
+	rowLabel_div.appendChild(colActualTimeLabel_div);
+	rowLabel_div.appendChild(colYourTimeLabel_div);
 
 	container_div = document.createElement("DIV");
 	container_div.classList.add("container");
+	container_div.appendChild(rowLabel_div);
+	container_div.appendChild(rowValue_div);
 
 	replay_btn = document.createElement("BUTTON");
 	replay_btn.innerHTML = "Next Round";
@@ -127,35 +141,24 @@ function showResult(){
 	replay_btn.setAttribute('onclick','closeResult()');
 
 	center_ele = document.createElement("CENTER");
-
-	result = document.getElementById('result');
-
-	col11_div.appendChild(actualTime_p);
-	col12_div.appendChild(yourTime_p);
-	row1_div.appendChild(col11_div);
-	row1_div.appendChild(col12_div);
-
-	col21_div.appendChild(actualTimeLabel_p);
-	col22_div.appendChild(yourTimeLabel_p);
-	row2_div.appendChild(col21_div);
-	row2_div.appendChild(col22_div);
-	container_div.appendChild(row1_div);
-
 	center_ele.appendChild(replay_btn);
 
-	result.appendChild(container_div);
-	result.appendChild(center_ele);
-	result.classList.add("border-secondary");
-	result.classList.add("border");
-	result.style.marginTop = "500px";
+	displayResult = document.createElement("DIV");
+	displayResult.id = "displayResult";
+	displayResult.classList.add("border");
+	displayResult.classList.add("border-secondary");
+	displayResult.classList.add("rounded");
+	displayResult.appendChild(title_h5);
+	displayResult.appendChild(container_div);
+	displayResult.appendChild(center_ele);
 
-	document.getElementById("actualTime").innerHTML = actualTime;
-	document.getElementById("yourTime").innerHTML = yourTime;	
+	result = document.getElementById("result");
+	result.appendChild(displayResult);
 }
 
 //close result box
 function closeResult(){
-	document.getElementById("result").remove();
+	document.getElementById("displayResult").remove();
 	document.getElementById("game").style.visibility  = 'visible';
 
 	var time = document.getElementById("getTime");
@@ -171,13 +174,16 @@ function closeResult(){
 //-----------------------------------------Need to change the scoring pattern;
 //calculate score
 function calcScore(){
-	score = (10 - Math.abs(actualTime - yourTime)).toFixed(2);
-	totalScore += score;
-	document.getElementById('score').innerHTML = "SCORE : " + totalScore;
+	playTime++;
+	roundScore = (10 - Math.abs(actualTime - yourTime)) * 10;
+	totalScore += roundScore;
+	score = totalScore / playTime;
+	console.log(playTime+" "+totalScore+" "+score);
+	document.getElementById('score').innerHTML = "SCORE : " + score.toFixed(2);
 }
 
 //redirect to save.html
 function saveScore(){
-  	sessionStorage.setItem("totalScore", totalScore);
+  	sessionStorage.setItem("totalScore", score);
 	window.location = "save.html";
 }
