@@ -3,6 +3,7 @@ function startGame(){
 	window.location = "play.html";  
 }
 
+//fill the element on hover on
 function hoverOnFill(ele){
 	if(ele.classList.contains("border-secondary")){
 		ele.classList.add("bg-secondary");
@@ -34,6 +35,7 @@ function hoverOnFill(ele){
 	}
 }
 
+//un-fill the element on hover out
 function hoverOffFill(ele){
 	if(ele.classList.contains("border-secondary")){
 		ele.classList.remove("bg-secondary");

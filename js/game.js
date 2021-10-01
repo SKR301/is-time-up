@@ -6,12 +6,12 @@ var totalScore = 0;
 var playTime = 0;
 
 document.getElementById("startTimer_btn").disabled  = true;
-document.getElementById('game').style.visibility  = 'hidden';
+document.getElementById('game').style.display  = 'none';
 
 //close instruction
 function closeInstruction(){
 	document.getElementById('instruction').remove();
-	document.getElementById('game').style.visibility  = 'visible';
+	document.getElementById('game').style.display  = 'block';
 }
 
 //generate time
@@ -178,7 +178,6 @@ function calcScore(){
 	roundScore = (10 - Math.abs(actualTime - yourTime)) * 10;
 	totalScore += roundScore;
 	score = totalScore / playTime;
-	console.log(playTime+" "+totalScore+" "+score);
 	document.getElementById('score').innerHTML = "SCORE : " + score.toFixed(2);
 }
 

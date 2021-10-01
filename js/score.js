@@ -2,6 +2,17 @@ window.onload = function(){
     if(window.location.href.includes("index")){
         displayHighScore();
     }
+
+    if(sessionStorage.length != 0 && window.location.href.includes("index")){
+        if(sessionStorage.getItem("isSaved")){
+            document.getElementById('savedSuccessfulMsg').style.display = "block";
+            document.getElementById('savedFailurefulMsg').style.display = "none";
+        }else{
+            document.getElementById('savedSuccessfulMsg').style.display = "none";
+            document.getElementById('savedFailurefulMsg').style.display = "block";
+        }
+    }
+    sessionStorage.clear();
 }
 
 function displayHighScore(){
@@ -23,6 +34,7 @@ function displayHighScore(){
 
 function saveScore(){
     score = sessionStorage.getItem("totalScore");
+    score = Math.ceil(parseFloat(score));
     name = document.getElementById("username").value;
     age = document.getElementById("userAge").value;
 
@@ -30,6 +42,12 @@ function saveScore(){
         "score": score,
         "age": age,
         "name": name
+    }).then( res => {
+        sessionStorage.setItem("isSaved", 1);
+        window.location = "index.html";
+    }).catch( error => {
+        sessionStorage.setItem("isSaved", 0);
+        window.location = "index.html";
     });
 
 }
