@@ -11,8 +11,8 @@ window.onload = function(){
             document.getElementById('savedSuccessfulMsg').style.display = "none";
             document.getElementById('savedFailurefulMsg').style.display = "block";
         }
+        sessionStorage.clear();
     }
-    sessionStorage.clear();
 }
 
 function displayHighScore(){
@@ -34,7 +34,8 @@ function displayHighScore(){
 
 function saveScore(){
     score = sessionStorage.getItem("totalScore");
-    score = Math.ceil(parseFloat(score));
+    // score = Math.ceil(parseFloat(score));
+    alert(score);
     name = document.getElementById("username").value;
     age = document.getElementById("userAge").value;
 
