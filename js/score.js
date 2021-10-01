@@ -34,8 +34,6 @@ function displayHighScore(){
 
 function saveScore(){
     score = sessionStorage.getItem("totalScore");
-    // score = Math.ceil(parseFloat(score));
-    alert(score);
     name = document.getElementById("username").value;
     age = document.getElementById("userAge").value;
 
