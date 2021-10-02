@@ -33,20 +33,42 @@ function displayHighScore(){
 }
 
 function saveScore(){
-    score = sessionStorage.getItem("totalScore");
+    score = parseFloat(sessionStorage.getItem("totalScore")).toFixed(2);
     name = document.getElementById("username").value;
     age = document.getElementById("userAge").value;
 
-    ref.push({
+    if(validateData(score, name, age)){
+        ref.push({
         "score": score,
         "age": age,
         "name": name
-    }).then( res => {
-        sessionStorage.setItem("isSaved", 1);
-        window.location = "index.html";
-    }).catch( error => {
-        sessionStorage.setItem("isSaved", 0);
-        window.location = "index.html";
-    });
+        }).then( res => {
+            sessionStorage.setItem("isSaved", 1);
+            window.location = "index.html";
+        }).catch( error => {
+            sessionStorage.setItem("isSaved", 0);
+            window.location = "index.html";
+        });
+    } else {
+        document.getElementById("username").value = "";
+        document.getElementById("userAge").value = "";
+        document.getElementById("invalidDataAlert").style.display = "block";
+    }
+}
 
+function validateData(score, name, age){
+    if(!(/^[0-9a-zA-Z_._ @]+$/.test(name))){
+        document.getElementById("invalidDataAlert").innerHTML = "username is not valid";
+        return false;
+    }
+    if(!(/^[0-9]+$/.test(age))){
+        document.getElementById("invalidDataAlert").innerHTML = "age is not valid";
+        return false;
+    }
+    if(isNaN(score)){
+        document.getElementById("invalidDataAlert").innerHTML = "Some unfortunate error";
+        return false;
+    }
+
+    return true;
 }
