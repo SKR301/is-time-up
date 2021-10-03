@@ -25,7 +25,7 @@ function displayHighScore(){
             var colUser = document.getElementById("highScore"+row+"User");
             var colScore = document.getElementById("highScore"+row+"Score");
 
-            colUser.innerHTML = userName;
+            colUser.innerHTML = (userName.length <= 15)?userName: userName.substring(0,15) + "...";
             colScore.innerHTML = userScore + " pts.";
             row--;
         });

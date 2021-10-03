@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/css.css">
 </head>
 <body class="">
 
@@ -12,7 +14,7 @@ is TIME UP?
 </header>
 
 <!-- nav bar -->
-<ul class="list-inline text-light p-2">
+<ul class="list-inline text-light p-3 font-35">
   <li class="list-inline-item"><a class="text-dark" href="index.html"><u>Back</u></a></li>
 </ul>
 
@@ -20,20 +22,20 @@ is TIME UP?
   Input Data is invalid!!! Try again
 </div>
 
-<div class="w-75 mx-auto">
+<div class="w-75 mx-auto mt-5">
 	<div class="input-group mb-3">
-	  <span class="input-group-text">@</span>
-	  <input type="text" class="form-control" placeholder="Username" id="username">
+	  <!-- <span class="input-group-text font-25">@</span> -->
+	  <input type="text" class="form-control font-40" placeholder="Username" id="username">
 	</div>
 	<div class="input-group mb-3">
-	  <span class="input-group-text">#</span>
-	  <input type="number" class="form-control" placeholder="Age" min="1" max="" id="userAge">
+	  <!-- <span class="input-group-text font-25">#</span> -->
+	  <input type="number" class="form-control font-40" placeholder="Age" min="1" max="" id="userAge">
 	</div>
-	<button type="submit" class="btn btn-success float-end" onclick="saveScore()">Submit</button>
+	<button type="submit" class="btn btn-success float-end font-40" onclick="saveScore()">Submit</button>
 </div>
 
 <!-- footer -->
-<footer class="text-light fixed-bottom text-center bg-dark p-2 mt-5">
+<footer class="text-light fixed-bottom text-center bg-dark p-2 mt-5 font-25">
 	<p class="p-2">©SKRinternationals PVT. LTD.<br> estd. 2021</p>
 	<a class="text-info mb-3" href="contact.html">Contact us</a>
 </footer>

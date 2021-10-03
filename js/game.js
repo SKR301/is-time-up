@@ -22,7 +22,7 @@ function genTime(){
 	time.classList.remove("rounded");
 	time.setAttribute('onclick','');
 	time.classList.add("text-primary");
-	time.classList.add("font-50");
+	time.classList.add("font-75");
 
 	actualTime = Math.floor(Math.random() * 9 + 1);
 	time.innerHTML = actualTime + " secs";
@@ -61,11 +61,12 @@ function stopTime(){
 function showResult(){
 	document.getElementById("game").style.visibility  = 'hidden';
 
-	title_h5 = document.createElement("H1");
-	title_h5.innerHTML = "Result";
+	title_h1 = document.createElement("H1");
+	title_h1.classList.add("display-1");
+	title_h1.innerHTML = "Result";
 
 	actualTime_p = document.createElement("P");
-	actualTime_p.classList.add("display-4");
+	actualTime_p.classList.add("display-2");
 	actualTime_p.classList.add("p-2");
 	actualTime_p.classList.add("border");
 	actualTime_p.classList.add("bg-light");
@@ -81,7 +82,7 @@ function showResult(){
 	colActualTime_div.appendChild(actualTime_p);
 
 	yourTime_p = document.createElement("P");
-	yourTime_p.classList.add("display-4");
+	yourTime_p.classList.add("display-2");
 	yourTime_p.classList.add("p-2");
 	yourTime_p.classList.add("border");
 	yourTime_p.classList.add("bg-light");
@@ -103,6 +104,7 @@ function showResult(){
 	rowValue_div.appendChild(colYourTime_div);
 
 	actualTimeLabel_p = document.createElement("P");
+	actualTimeLabel_p.classList.add("display-4");
 	actualTimeLabel_p.classList.add("p-2");
 	actualTimeLabel_p.id = "actualTimeLabel";
 	actualTimeLabel_p.innerHTML = "actualTime";
@@ -112,6 +114,7 @@ function showResult(){
 	colActualTimeLabel_div.appendChild(actualTimeLabel_p);
 
 	yourTimeLabel_p = document.createElement("P");
+	yourTimeLabel_p.classList.add("display-4");
 	yourTimeLabel_p.classList.add("p-2");
 	yourTimeLabel_p.id = "yourTimeLabel";
 	yourTimeLabel_p.innerHTML = "yourTime";
@@ -137,7 +140,8 @@ function showResult(){
 	replay_btn.classList.add("btn-primary");
 	replay_btn.classList.add("mt-3");
 	replay_btn.classList.add("p-2");
-	replay_btn.classList.add("mb-2");
+	replay_btn.classList.add("mb-4");
+	replay_btn.classList.add("font-40");
 	replay_btn.setAttribute('onclick','closeResult()');
 
 	center_ele = document.createElement("CENTER");
@@ -148,7 +152,7 @@ function showResult(){
 	displayResult.classList.add("border");
 	displayResult.classList.add("border-secondary");
 	displayResult.classList.add("rounded");
-	displayResult.appendChild(title_h5);
+	displayResult.appendChild(title_h1);
 	displayResult.appendChild(container_div);
 	displayResult.appendChild(center_ele);
 

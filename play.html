@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/css.css">
 </head>
@@ -13,17 +14,17 @@ is TIME UP?
 </header>
 
 <!-- nav bar -->
-<ul class="list-inline text-light p-3">
+<ul class="list-inline text-light p-3 font-35">
   <li class="list-inline-item"><a class="text-dark" href="index.html"><u>Back</u></a></li>
 </ul>
 
 <!-- introduction -->
 <div class="w-75 m-5 mx-auto card" id="instruction">
 	<div class="p-4 rounded">
-	<h1 class="card-title">INSTRUCTIONS:</h1>
-	<h6 class="card-subtitle text-muted">This is a game to test your time perception skills.</h6>
+	<h1 class="card-title display-3">INSTRUCTIONS:</h1>
+	<h6 class="card-subtitle text-muted font-20">This is a game to test your time perception skills.</h6>
 	<p class="card-text">
-		<ol>
+		<ol class="font-30">
 		<li>Start by pressing "Get Time"</li>
 		<li>Click the START to start timer</li>
 		<li>Wait for the time given</li>
@@ -32,32 +33,32 @@ is TIME UP?
 		</ol>
 	</p>
 	</div>
-	<center><a class="card-link btn btn-primary font-20 w-100" onclick="closeInstruction()">PLAY</a></center>
+	<center><a class="card-link btn btn-primary font-40 w-100" onclick="closeInstruction()">PLAY</a></center>
 </div>
 
 <!-- round result -->
-<div class="mx-auto w-75 text-center rounded" id="result">
+<div class="mx-auto w-75 text-center rounded m-5" id="result">
 </div>
 
 <!-- add game logic here -->
 <div class="m-5" id="game">
 	<center>
-		<p class="display-4 btn btn-primary rounded font-weight-bold font-30" onclick="genTime()" id="getTime">Get Time</p>
+		<p class="btn btn-primary rounded font-weight-bold font-50" onclick="genTime()" id="getTime">Get Time</p>
 	</center>
 
 	<div class="text-center">
-		<button class="btn btn-success text-center mt-3 font-50 circle-md" onclick="startTime()" id="startTimer_btn">START</button>
+		<button class="btn btn-success text-center mt-5 font-100 circle-lg" onclick="startTime()" id="startTimer_btn">START</button>
 	</div>
 
 	<!-- scoring -->
 	<div class="text-center mt-5">
-		<p id="score" class="display-4">SCORE : 0</p>
-		<button class="btn btn-warning font-25" onclick="saveScore()" id="save_btn">Save</button>
+		<p id="score" class="display-2">SCORE : 0</p>
+		<button class="btn btn-warning font-50 mt-4" onclick="saveScore()" id="save_btn">Save</button>
 	</div>
 </div>
 
 <!-- footer -->
-<footer class="text-light fixed-bottom text-center bg-dark p-2 mt-5">
+<footer class="text-light fixed-bottom text-center bg-dark p-2 mt-5 font-25">
 	<p class="p-2">©SKRinternationals PVT. LTD.<br> estd. 2021</p>
 	<a class="text-info mb-3" href="contact.html">Contact us</a>
 </footer>
