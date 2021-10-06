@@ -22,7 +22,6 @@ function genTime(){
 	time.classList.remove("rounded");
 	time.setAttribute('onclick','');
 	time.classList.add("text-primary");
-	time.classList.add("font-75");
 
 	actualTime = Math.floor(Math.random() * 9 + 1);
 	time.innerHTML = actualTime + " secs";
