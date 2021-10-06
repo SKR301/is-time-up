@@ -14,10 +14,11 @@ is TIME UP?
 </header>
 
 <!-- nav bar -->
-<ul class="list-inline text-light p-3 font-35">
+<ul class="list-inline text-light p-3 font-15">
   <li class="list-inline-item"><a class="text-dark" href="#"><u>Home</u></a></li>
   <li class="list-inline-item"><a class="text-secondary" href="play.html"><u>Play</u></a></li>
   <li class="list-inline-item"><a class="text-secondary" href="analytics.html"><u>Analitics</u></a></li>
+  <li class="list-inline-item"><a class="text-secondary" href="contact.html"><u>Contact Us</u></a></li>
 </ul>
 
 <div class="alert alert-success" role="alert" id="savedSuccessfulMsg" style="display: none;">
@@ -28,36 +29,35 @@ is TIME UP?
 </div>
 
 <!-- start button -->
-<div class="text-center mt-5">
+<div class="text-center mt-2">
 	<img class="border rounded-circle pointer-cursor circle-lg" id="startGame_btn" src="img/start_btn.jpg" onclick="startGame()" onmousedown="delargeStartButtonImg()" onmouseup="enlargeStartButtonImg()" onmouseover="enlargeStartButtonImg()" onmouseout="delargeStartButtonImg()" />
 </div>
 
 
 <!-- highscore -->
 <div class="container text-center w-75 mt-5">
-	<h1 class="font-weight-bold display-2">High Scores</h1>
-	<div class="row text-dark font-35">
+	<h1 class="font-30">High Scores</h1>
+	<div class="row text-dark">
 		<div class="col-8">Name</div>
 		<div class="col-4">Score</div>
 	</div>
-	<div class="row border border-secondary text-secondary rounded font-25 mt-2" onmouseover="hoverOnFill(this)" onmouseout="hoverOffFill(this)">
+	<div class="row border border-secondary text-secondary rounded font-10 mt-2" onmouseover="hoverOnFill(this)" onmouseout="hoverOffFill(this)">
 		<div class="col-8" id="highScore3User"></div>
 		<div class="col-4" id="highScore3Score"></div>
 	</div>
-	<div class="row border border-primary text-primary rounded font-30 mt-2" onmouseover="hoverOnFill(this)" onmouseout="hoverOffFill(this)">
+	<div class="row border border-primary text-primary rounded font-15 mt-2" onmouseover="hoverOnFill(this)" onmouseout="hoverOffFill(this)">
 		<div class="col-8" id="highScore2User"></div>
 		<div class="col-4" id="highScore2Score"></div>
 	</div>
-	<div class="row border border-success text-success rounded font-35 mt-2" onmouseover="hoverOnFill(this)" onmouseout="hoverOffFill(this)">
+	<div class="row border border-success text-success rounded font-20 mt-2" onmouseover="hoverOnFill(this)" onmouseout="hoverOffFill(this)">
 		<div class="col-8" id="highScore1User"></div>
 		<div class="col-4" id="highScore1Score"></div>
 	</div>
 </div>
 
 <!-- footer -->
-<footer class="text-light fixed-bottom text-center bg-dark p-2 mt-5 font-25">
-	<p class="p-2">©SKRinternationals PVT. LTD.<br> estd. 2021</p>
-	<a class="text-info mb-3" href="contact.html">Contact us</a>
+<footer class="text-light fixed-bottom text-center bg-dark p-2">
+	<p class="">©SKRinternationals PVT. LTD.<br> estd. 2021</p>
 </footer>
 
 </body>
