@@ -103,7 +103,7 @@ function showResult(){
 	rowValue_div.appendChild(colYourTime_div);
 
 	actualTimeLabel_p = document.createElement("P");
-	actualTimeLabel_p.classList.add("display-4");
+	actualTimeLabel_p.classList.add("font-20");
 	actualTimeLabel_p.classList.add("p-2");
 	actualTimeLabel_p.id = "actualTimeLabel";
 	actualTimeLabel_p.innerHTML = "actualTime";
@@ -113,7 +113,7 @@ function showResult(){
 	colActualTimeLabel_div.appendChild(actualTimeLabel_p);
 
 	yourTimeLabel_p = document.createElement("P");
-	yourTimeLabel_p.classList.add("display-4");
+	yourTimeLabel_p.classList.add("font-20");
 	yourTimeLabel_p.classList.add("p-2");
 	yourTimeLabel_p.id = "yourTimeLabel";
 	yourTimeLabel_p.innerHTML = "yourTime";
@@ -140,7 +140,7 @@ function showResult(){
 	replay_btn.classList.add("mt-3");
 	replay_btn.classList.add("p-2");
 	replay_btn.classList.add("mb-4");
-	replay_btn.classList.add("font-40");
+	replay_btn.classList.add("font-30");
 	replay_btn.setAttribute('onclick','closeResult()');
 
 	center_ele = document.createElement("CENTER");
