@@ -65,11 +65,10 @@ function showResult(){
 	title_h1.innerHTML = "Result";
 
 	actualTime_p = document.createElement("P");
-	actualTime_p.classList.add("display-2");
-	actualTime_p.classList.add("p-2");
-	actualTime_p.classList.add("border");
+	actualTime_p.classList.add("display-4");
+	actualTime_p.classList.add("pt-4");
 	actualTime_p.classList.add("bg-light");
-	actualTime_p.classList.add("rounded-circle");
+	actualTime_p.classList.add("border");
 	actualTime_p.classList.add("circle-sm");
 	actualTime_p.id = "Goal";
 	actualTime_p.innerHTML = actualTime;
@@ -78,14 +77,14 @@ function showResult(){
 	colActualTime_div.classList.add("col");
 	colActualTime_div.classList.add("d-flex");
 	colActualTime_div.classList.add("justify-content-center");
+	colActualTime_div.classList.add("rounded-circle");
 	colActualTime_div.appendChild(actualTime_p);
 
 	yourTime_p = document.createElement("P");
-	yourTime_p.classList.add("display-2");
-	yourTime_p.classList.add("p-2");
-	yourTime_p.classList.add("border");
+	yourTime_p.classList.add("display-4");
+	yourTime_p.classList.add("pt-4");
 	yourTime_p.classList.add("bg-light");
-	yourTime_p.classList.add("rounded-circle");
+	yourTime_p.classList.add("border");
 	yourTime_p.classList.add("circle-sm");
 	yourTime_p.id = "Effort";
 	yourTime_p.innerHTML = yourTime;
@@ -94,6 +93,7 @@ function showResult(){
 	colYourTime_div.classList.add("col");
 	colYourTime_div.classList.add("d-flex");
 	colYourTime_div.classList.add("justify-content-center");
+	colYourTime_div.classList.add("rounded-circle");
 	colYourTime_div.appendChild(yourTime_p);
 
 	rowValue_div = document.createElement("DIV");
