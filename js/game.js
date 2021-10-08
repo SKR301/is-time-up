@@ -178,7 +178,7 @@ function closeResult(){
 //calculate score
 function calcScore(){
 	playTime++;
-	roundScore = (10 - Math.abs(actualTime - yourTime)) * 10;
+	roundScore = (2 / (1 + Math.exp( Math.abs(actualTime - yourTime) / actualTime ))) * 100;
 	totalScore += roundScore;
 	score = totalScore / playTime;
 	document.getElementById('score').innerHTML = "SCORE : " + score.toFixed(2);
