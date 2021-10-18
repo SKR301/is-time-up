@@ -6,13 +6,12 @@ window.onload = function(){
         document.getElementById('saveToSeeHighScore').style.display = "block";
     }
 
-    if(sessionStorage.length != 0){ //&& window.location.href.includes("index")){
+    if(sessionStorage.length != 0){
         if(sessionStorage.getItem("isSaved")){
             document.getElementById('savedSuccessfulMsg').style.display = "block";
             document.getElementById('savedFailurefulMsg').style.display = "none";
         }
         if(!sessionStorage.getItem("isSaved") && sessionStorage.getItem("totalScore")){
-            alert(sessionStorage.getItem("totalScore"));
             document.getElementById('savedSuccessfulMsg').style.display = "none";
             document.getElementById('savedFailurefulMsg').style.display = "block";
         }
