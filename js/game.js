@@ -7,6 +7,7 @@ var playTime = 0;
 
 document.getElementById("startTimer_btn").disabled  = true;
 document.getElementById('game').style.display  = 'none';
+document.getElementById('save_btn').style.visibility  = 'hidden';
 
 //close instruction
 function closeInstruction(){
@@ -172,6 +173,8 @@ function closeResult(){
 	time.classList.remove("text-primary");
 	time.classList.remove("font-50");
 	time.innerHTML = "Get Time";
+
+	document.getElementById('save_btn').style.visibility  = 'visible';
 }
 
 //-----------------------------------------Need to change the scoring pattern;
