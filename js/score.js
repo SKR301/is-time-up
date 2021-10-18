@@ -1,17 +1,25 @@
 window.onload = function(){
-    if(window.location.href.includes("index")){
+    if(sessionStorage.getItem("showHighScore")){
         displayHighScore();
+        document.getElementById('higScoreContainer').style.display = "block";
+    }else{
+        document.getElementById('saveToSeeHighScore').style.display = "block";
     }
 
-    if(sessionStorage.length != 0 && window.location.href.includes("index")){
+    if(sessionStorage.length != 0){ //&& window.location.href.includes("index")){
         if(sessionStorage.getItem("isSaved")){
             document.getElementById('savedSuccessfulMsg').style.display = "block";
             document.getElementById('savedFailurefulMsg').style.display = "none";
-        }else{
+        }
+        if(!sessionStorage.getItem("isSaved") && sessionStorage.getItem("totalScore")){
+            alert(sessionStorage.getItem("totalScore"));
             document.getElementById('savedSuccessfulMsg').style.display = "none";
             document.getElementById('savedFailurefulMsg').style.display = "block";
         }
-        sessionStorage.clear();
+
+        sessionStorage.removeItem("isSaved");
+        sessionStorage.removeItem("totalScore");
+
     }
 }
 
@@ -44,6 +52,7 @@ function saveScore(){
         "name": name
         }).then( res => {
             sessionStorage.setItem("isSaved", 1);
+            sessionStorage.setItem("showHighScore", 1);
             window.location = "index.html";
         }).catch( error => {
             sessionStorage.setItem("isSaved", 0);

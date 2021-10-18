@@ -35,7 +35,12 @@ is TIME UP?
 
 <!-- highscore -->
 <div class="container text-center w-75 mt-5">
-	<h1 class="font-25">High Scores</h1>
+	<div class="alert alert-warning mt-5" role="alert" id="saveToSeeHighScore" style="display: none;">
+	  <b>Play</b> and <b>Save</b> to see highscores!!!
+	</div>
+
+<div id="higScoreContainer" style="display: none;">
+	<h1 class="font-25" >High Scores</h1>
 	<div class="row text-dark">
 		<div class="col-8">Name</div>
 		<div class="col-4">Score</div>
@@ -52,6 +57,7 @@ is TIME UP?
 		<div class="col-8" id="highScore1User"></div>
 		<div class="col-4" id="highScore1Score"></div>
 	</div>
+</div>
 </div>
 
 <!-- footer -->
